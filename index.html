@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    :root{
+        --gray : rgb(230, 230, 230);
+        --darkgray:rgb(200,200,200);
+        --maingray:rgba(55,65,81);
+    }
+    *{
+        margin: 0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    body{
+        min-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-color: var(--gray);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding:0;
+        margin: 0;
+        box-shadow: 1 1 2px 2px gray;
+        padding:1.6rem;
+    }
+    .as{
+        font-size: 2rem;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bolder;
+        color:var(--maingray);
+    }
+    main{
+        width:80%;
+        background-color: white;
+        box-shadow: 0 2px 20px 1px var(--darkgray);
+        border-radius: 10px;
+        padding:40px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom:50px;
+        &>div{
+            width:100%;
+        }
+
+    }
+    .profile{
+        border:2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:200px;
+        margin: 20px;
+        overflow: hidden;
+        border-radius: 100px;
+        aspect-ratio: 1;
+        box-shadow: 0 0 2px 2px lightgray;
+    }
+    .name{
+        margin-top:15px;
+        text-align: center;
+        color:rgb(77, 114, 77);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bolder;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    .country{
+        text-align: center;
+        margin-top:10px;
+        text-align: center;
+        color:rgba(100,100,100);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bolder;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .tagline{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        margin:20px;
+        margin-top: 5px;
+        color:rgb(40,40,40);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .cutline{
+        width: 100%;
+        height: 2px;
+        background-color: lightgray;
+    }
+    .heading{
+        margin:10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color:var(--maingray);
+    }
+    .skills-container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .skill{
+        width: fit-content;
+        padding:10px;
+        margin: 10px;
+        border:2px solid var(--maingray);
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 0;
+    }
+    .gmail{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        margin-top: 10px;
+        color:var(--maingray);
+        font-weight: bolder;
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAApCAYAAACGJSFkAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUASURBVHgB5Vo9c9xUFD1XmyKBZqnBRKEyabLMQOIOmYou8i/wukzl+Bes3dFlXTlUtv+Avf4DWK6wocCu4i5ixtRZZsIwzGT3ca4+PNrNfkirC01Os7IsHb3z3n1X90OCBREEYfMvIPSAbyFoAdLkab9wSQznYv0dAmcNIDqPevH/xTcLUuViHdhboM0HPoVIgKpwLuKAD3+NegfjfE6kxf+fcECXvCbiuX5R1EoQ+vzxHdDitQGve6STUOQri9KinwThcz6swxuaqI/Yc25rILLP4yseb1NghIp4HIQhJ7+tEzB0bqes+LmidYY5u/sLrexkxOLcxjseNKCT6DYWNdMcyRhFjnnYJPfqPL7GbLK19aFIT0SWYQBO3iFXdYO/657IS065Drb9mb/8zx/x9TkWxE183ef9P37uPxQn2COfzOKbKnrlu7DjIF2awl0YwDnZ8eC6FHlKq/k+P5/w8+9P/WVwoGeogZv41fmSv3xCvj3yNafxTRSdCHayDSOkgocHieBRj3wLWlNgI/y6nwnvThP+nmh1WBzCD7CCwy5X+OUswTlU+JL/ZcyBX6EGisLJ1x/nG3Fk6hC4h38z8tAKdVqrZQTn4H7vc99/Vde5KTIHdzru3LyRB+oFdoKRCAY2UVJwcg+fT1+yDwOoUM/J7jjfrehvgrBdZXBzIe5goBMo8hxVIQjSbVYfP0dHXZ3JIt+taL5COjCEDLHjpe/OhaCBkEZsMAAtbqfIl4j+L1aZ4WGrDqea+d8MUWEAjfY0vM35EtGeYB2GGAxxKJA2akOewgi62jmfZB7uNeyQe2wTznvOfRJFvT4M8Hh17c1Hzj3w6GwCWEKSTKoFI2i6CSswi0vSV5phAEPQgZ2J4UQm+bURdF8rHx2suw9DvNNkX5jrGsGJndVo4UH5KFwewBB3VLQhp6QVFBNw2/WVT7236Upn4Z4lpw8jZGPzPXyA+GBF/w5DZAU8S84YRsjGFqvoNzDEIM3SzDidM51AX/mYurpaCfsEaCm3VvWjCPGcWbSo5WPl83gQwRD68uer4RJG0GAHZmC9nHzex0APhmDMHRpzRrBCGjRFXhbMRzCCpoRv09g7Qk1w/51ZlI0U2hjQ/ZxUUzL2ExiC4V6YpnL1wILiAYygqW7Ol4i+BxxoQQ5GoImv3033dYTFEZ9X7FFNQ/KqomnnfIloNfEGa9Mwgpo4U7hOndW2sJQcXNDjIt9ICfjJ6pqWagMYYcBiQsOTkE/drHhrfHF6bJK0JAVBkc0i30gYKmmfyczMG+xKytB1USGq0udr5QUGSM1aNsf5RkSndWK3BTv4zvM62UPjMjewy7FjWegn4e4433ttHbZALpe+eKhmH8AGraRrAWxxAFr6mZofa8/rl9Oj2i2lXDD5DifxTWzg3bx+FVkK1x7VPOGJ4OhoGzUxIngK39RWrQpnv/fPoWDFol2rwhme6n56pp0FHZ+ez3pXzy6i4y5qInNae+qpZ/GV+xKhQgOuBJISMcU3ByIv1HnW3cNfB2HA1etwnMwnXHse31zROSi+7dLWj4+aSN4QFMsxvmCWp0EMTbFXOV4viG2pA7z46aiUtZQWnUPFD9OPWyqXZin2jCvb0wgwL+AX+O7rBOjnUjx9eSeNyOLCc/1B0tGECn3kUt9wNc5XBpVFFwfBn2CYfoDjS2oBxYKgJv99FaLpq2ZeswZmzTcL/wLgJ3WwgbRoXQAAAABJRU5ErkJggg==" width="50">
+        </div>
+        <div class="as"></div>
+    </nav>
+    <main>
+        <div class="profile">
+            <img src="https://amrit773384.github.io/amritsingh.dev/static/images/prophile.jpg" style="width: 100%;">
+        </div>
+        <div class="name">
+            Amrit singh
+        </div>
+        <!-- <div class="country">
+            INDIA
+        </div> -->
+        <div class="tagline">
+            Backend Developer
+        </div>
+        <div class="heading">
+            MAJOR SKILLS
+        </div>
+        <div class="cutline">
+        </div>
+        <div class="skills-container">
+            <div class="skill">
+                PYTHON
+            </div>
+            <div class="skill">
+                DJANGO
+            </div>
+        </div>
+        <div class="heading">
+            WORKED WITH
+        </div>
+        <div class="cutline">
+        </div>
+        <div class="skills-container" style="display: flex;flex-wrap: wrap;flex-direction: row;width:100%;">
+            <div class="skill">
+                Matplotlib
+            </div>
+            <div class="skill">
+                Numpy
+            </div>
+            <div class="skill">
+                ScikitLearn
+            </div>
+            <div class="skill">
+                HTML
+            </div>
+            <div class="skill">
+                CSS
+            </div>
+            <div class="skill">
+                JavaScript
+            </div>
+            <div class="skill">
+                LINUX
+            </div>
+            <div class="skill">
+                GIT
+            </div>
+            <div class="skill">
+                ODOO
+            </div>
+        </div>
+        <div class="heading">
+            REACH
+        </div>
+        <div class="cutline">
+        </div>
+        <div class="gmail" style="display: flex;">
+            <span><img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" width="15" style="margin-right: 6px;margin-left: 6px;"></span>amrit773384@gmail.com
+        </div>
+    </main>
+</body>
+</html>
